@@ -1,16 +1,32 @@
 ///////////////Menu Items (MVP)///////////////////
 
-const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-const burger = {name: "Burger", price: 18, category: "Lunch"};
-const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
+const latte = {
+  name: "Cafe Latte", 
+  price: 4, 
+  category: "Drinks"};
+
+
+const burger = {
+  name: "Burger", 
+  price: 18, 
+  category: "Lunch"};
+
+const breakfastBurrito = {
+  name: "Breakfast Burrito", 
+  price: 16, 
+  category:"Breakfast"};
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-function createMenuItem(name, cost, category){
-    
+function createMenuItem(name, price, catergory){
+  return{name, price, catergory}
 }
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
+
+console.log(createMenuItem(steak, 15, dinner))
+
+
 
 
 
@@ -28,7 +44,8 @@ For example, burger.discount("teacher") would return 13.5 and burger.discount("p
 
 ///////////////Reviews (MVP)///////////////////
 
-const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
+const reviews = [
+    {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
     {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
     {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
     {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
