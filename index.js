@@ -108,9 +108,19 @@ function getLastReview(/* code here */) {
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+function getReviewByRating(array, stars) {
+  let newArray = []
+  for (let i = 0; i < array.length; i++) {
+    if(reviews[i].rating >= stars && reviews[i].rating < stars + 1){
+      newArray.push(reviews[i])
+    }
   }
+  return newArray;
+}
+console.log(getReviewByRating(reviews, 4));
+
+
+
 
   
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
@@ -126,10 +136,26 @@ and should return an array of objects.
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
-  function getLongReviews(/* code here */) {
-    /* code here */
-  }
-  
+function getLongReviews(array, numberOfWords) {
+  let newArray=[]
+  let newString;
+  let totalWords;
+  let finalArray=[]
+  for (let i = 0; i < array.length; i++) {
+    newString = array[i].feedback // string
+    console.log(newString)
+    newArray = newString.split(' '); // string turned to array 
+    console.log(newArray);
+    totalWords = newArray.length // number of words
+    console.log(totalWords); 
+    if(totalWords >= numberOfWords){
+      finalArray.push(array[i]);
+    }
+}
+return finalArray;
+}
+console.log(getLongReviews(reviews, 10));
+
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
@@ -149,7 +175,4 @@ The returned object should have the following characteristics:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
-}
+
